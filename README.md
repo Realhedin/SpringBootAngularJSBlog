@@ -10,4 +10,4 @@ Spring Boot
 ### How to run
 use command: <b>mvn clean spring-boot:run</b> from cmd
 <br> or
-<br> run SampleController.java from IDE
+<br> run ApplicationStart.java from IDE

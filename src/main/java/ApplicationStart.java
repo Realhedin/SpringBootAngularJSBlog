@@ -45,6 +45,11 @@ public class ApplicationStart {
             comment.setUser(user);
             comment.setText("test comment");
             commentRepository.save(comment);
+            comment = new Comment();
+            comment.setUser(user);
+            comment.setText("new test comment");
+            commentRepository.save(comment);
+
         };
     }
 
