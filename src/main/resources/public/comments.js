@@ -31,6 +31,13 @@ module.factory('Comment', function($resource) {
         }
 
 
+        // delete comment
+        $scope.deleteComment = function (id) {
+            Comment.delete(angular.extend(url(), {id: id}));
+            update();
+        }
+
+
         //use update by default (when page first loading)
         update();
 

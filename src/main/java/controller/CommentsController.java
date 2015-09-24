@@ -42,7 +42,13 @@ public class CommentsController {
                 .orElseThrow(() -> new UserNotFoundException(username));
         comment.setUser(user);
         commentRepository.save(comment);
+    }
 
+    //delete comment for user
+    @RequestMapping(method = RequestMethod.DELETE)
+    public void deleteComment(@RequestParam Long id) {
+        commentRepository.delete(id);
+//        System.out.println();
     }
 
 

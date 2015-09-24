@@ -12,12 +12,14 @@
 <body data-ng-controller="CommentsController">
     Your comments are:
     <div data-ng-repeat="comment in comments" style="background-color:#EEE;padding:10px;width:300px;border:2px solid #0c24ff;margin:10px;'">
-        <p>The ID is {{comment.id}}</p>
+        <p> The ID is {{comment.id}}</p>
         <p>The content is {{comment.text}}</p>
+        <input data-ng-model="comment" hidden="hidden"/>
+        <br><button data-ng-click="deleteComment(comment.id)">Delete comment</button>
     </div>
     <br>Add new comment: <br>
     <textarea rows="10" cols="30" data-ng-model="text" style="width:300px;border:1px solid #25ff29;margin:10px;'"></textarea>
-    <br><button data-ng-click="add()">Add note</button>
+    <br><button data-ng-click="add()">Add comment</button>
 
 </body>
 </html>
