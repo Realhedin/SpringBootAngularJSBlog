@@ -10,7 +10,11 @@
 
 
 <body data-ng-controller="CommentsController">
-    Your comments are:
+    <p>Show comments of User(dkorolev,test): <input data-ng-model="username"><button data-ng-click="update()">Change User</button></p>
+
+    <p>Search: <input data-ng-model="searchText"><button data-ng-click="search()">Search</button> </p>
+
+    <p>Your comments are:</p>
     <div data-ng-repeat="comment in comments" style="background-color:#EEE;padding:10px;width:300px;border:2px solid #0c24ff;margin:10px;'">
         <p> The ID is {{comment.id}}</p>
         <p> Date is {{comment.date|date:'dd-MM-yyyy hh:mm:ss'}}</p>

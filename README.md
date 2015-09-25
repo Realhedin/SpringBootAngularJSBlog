@@ -5,7 +5,9 @@ Small blog application to try out SpringBoot technology
 Spring Boot
 <br>Java 8
 <br>Spring 4
-<br>Spring REST
+<br>Spring Data REST
+<br>AngularJS
+<br>InMemoryDB
 
 ### How to run
 use command: <b>mvn clean spring-boot:run</b> from cmd

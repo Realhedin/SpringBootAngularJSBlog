@@ -13,5 +13,9 @@ import java.util.Collection;
  */
 @Repository
 public interface CommentRepository extends JpaRepository<Comment, Long> {
+    //find all Comments by User's username
     Collection<Comment> findByUserUsername(String username);
+
+    //find all Comments by User's username and which contains text
+    Collection<Comment> findByUserUsernameAndTextContaining(String username, String text);
 }

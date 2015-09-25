@@ -48,7 +48,13 @@ public class CommentsController {
     @RequestMapping(method = RequestMethod.DELETE)
     public void deleteComment(@RequestParam Long id) {
         commentRepository.delete(id);
-//        System.out.println();
+    }
+
+
+    //find Comments by criteria
+    @RequestMapping(value = "/find", method = RequestMethod.GET)
+    public Collection<Comment> findComments(@PathVariable String username, @RequestParam String text) {
+        return commentRepository.findByUserUsernameAndTextContaining(username, text);
     }
 
 

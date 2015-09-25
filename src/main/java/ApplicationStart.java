@@ -39,21 +39,33 @@ public class ApplicationStart {
     @Bean
     CommandLineRunner init(UserRepository userRepository, CommentRepository commentRepository) {
         return (evt) -> {
+            //create 1st user and comments
             User user = new User();
             user.setUsername("dkorolev");
             user.setPassword("123");
             userRepository.save(user);
             Comment comment = new Comment();
             comment.setUser(user);
-            comment.setText("test comment");
+            comment.setText("dkorolev comment");
             comment.setDate(new Date());
             commentRepository.save(comment);
             comment = new Comment();
             comment.setUser(user);
-            comment.setText("new test comment");
+            comment.setText("new dkorolev comment");
             comment.setDate(new Date());
             commentRepository.save(comment);
 
+
+            //create 2nd user and comments
+            user = new User();
+            user.setUsername("test");
+            user.setPassword("123");
+            userRepository.save(user);
+            comment = new Comment();
+            comment.setUser(user);
+            comment.setText("test comment");
+            comment.setDate(new Date());
+            commentRepository.save(comment);
         };
     }
 

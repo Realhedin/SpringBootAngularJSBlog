@@ -6,7 +6,7 @@ module.factory('Comment', function($resource) {
     return $resource(':username/comments', { username: '@username' });
 })
     //create controller which is used in index.html
-    .controller('CommentsController', function($scope, Comment) {
+    .controller('CommentsController', function($scope, $http, Comment) {
         var url = function() {
             return {username:$scope.username||'dkorolev'};
         }
@@ -36,6 +36,19 @@ module.factory('Comment', function($resource) {
         $scope.deleteComment = function (id) {
             Comment.delete(angular.extend(url(), {id: id}));
             update();
+        }
+
+
+        //search comments by criterias
+        $scope.search = function() {
+            var user = $scope.username||'dkorolev';
+            console.log($scope.searchText);
+
+            $http.get(user+'/comments/find', {params: {text : $scope.searchText}})
+                .success(function(res) {
+                    console.log(res);
+                    $scope.comments = res;
+                })
         }
 
 
