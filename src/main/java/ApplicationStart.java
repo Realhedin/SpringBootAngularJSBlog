@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+
 /**
  * Main class to run application
  *
@@ -44,10 +46,12 @@ public class ApplicationStart {
             Comment comment = new Comment();
             comment.setUser(user);
             comment.setText("test comment");
+            comment.setDate(new Date());
             commentRepository.save(comment);
             comment = new Comment();
             comment.setUser(user);
             comment.setText("new test comment");
+            comment.setDate(new Date());
             commentRepository.save(comment);
 
         };

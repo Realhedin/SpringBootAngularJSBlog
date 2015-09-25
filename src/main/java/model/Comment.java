@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * Created by dkorolev on 9/23/15.
@@ -21,6 +23,7 @@ public class Comment {
     @ManyToOne
     private User user;
 
+    private Date date;
 
     private String text;
 
@@ -43,6 +46,14 @@ public class Comment {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getText() {

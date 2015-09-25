@@ -24,6 +24,7 @@ module.factory('Comment', function($resource) {
         $scope.add = function() {
             var comment = new Comment();
             comment.text = $scope.text;
+            comment.date = new Date();
             comment.$save(url(), function() {
                 $scope.text = "";
                 update();

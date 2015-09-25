@@ -13,6 +13,7 @@
     Your comments are:
     <div data-ng-repeat="comment in comments" style="background-color:#EEE;padding:10px;width:300px;border:2px solid #0c24ff;margin:10px;'">
         <p> The ID is {{comment.id}}</p>
+        <p> Date is {{comment.date|date:'dd-MM-yyyy hh:mm:ss'}}</p>
         <p>The content is {{comment.text}}</p>
         <input data-ng-model="comment" hidden="hidden"/>
         <br><button data-ng-click="deleteComment(comment.id)">Delete comment</button>
